@@ -9,6 +9,8 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.ts",
-    "home_work_1": "wdio run ./wdio.conf.ts  --spec ./test/specs/home_work_1.e2e.ts"
+    "home_work_1": "wdio run ./wdio.conf.ts  --spec ./test/specs/home_work_1.e2e.ts",
+    "home_work_2": "wdio run ./wdio.conf.ts  --spec ./test/specs/home_work_2.e2e.ts",
+    "final_task": "wdio run ./wdio.conf.ts  --spec ./test/specs/final_task.e2e.ts"
   }
 }
