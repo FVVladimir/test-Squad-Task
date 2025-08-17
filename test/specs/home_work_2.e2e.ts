@@ -13,11 +13,24 @@ describe('home wirk 2', () => {
           const title  = await browser.getTitle();  
            await expect(browser).toHaveTitle( "WebdriverIO · Next-gen browser and mobile automation test framework for Node.js | WebdriverIO")   
     });
-    it('tap api link', async () => {
-        await browser.url('https://webdriver.io/');
+    it('tap api link', async () => {        
            let APIlink = await $('[href="/docs/api"]');
             await APIlink.click();
             await browser.pause(2000) ;      
+    });
+    it('scroll into the footer', async () => {        
+           let window = await $('.pagination-nav__link');
+            await window.scrollIntoView();
+            await browser.pause(2000) ;      
+            await window.isDisplayed();
+            await window.isClickable();
+            await window.click();
+    });
+    it('check if h1 displayed', async () => {        
+           let window = await $('.pagination-nav__link');           
+           await window.click();
+           let title = await $('H1');
+           await title.isDisplayed();
     });
     
 })
