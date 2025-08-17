@@ -8,6 +8,7 @@
     "@wdio/spec-reporter": "^9.19.1"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.ts"
+    "wdio": "wdio run ./wdio.conf.ts",
+    "home_work_1": "wdio run ./wdio.conf.ts  --spec ./test/specs/home_work_1.e2e.ts"
   }
 }
