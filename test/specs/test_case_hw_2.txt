@@ -1,0 +1,11 @@
+Title: Check whether the scroll is work and window eneble
+       and header displayed;
+
+Preconditon: Go to the page webdriver.io
+  • click API
+  • scroll to the footer
+  • check whethr window is enable
+  • click the window
+  • await till heder is displayed
+
+Expected result: Scroll work correct, header is displayed;
