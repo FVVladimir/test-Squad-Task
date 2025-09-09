@@ -1,0 +1,13 @@
+Title: Check whether the link is being followed correctly
+       and whether the input and heading are displayed;
+
+Preconditon: Go to the page webdriver.io
+  • click API
+  • check url is equel ../api
+  • check header introdaction is displayed
+  • check introdaction bred cramps is displayed
+  • click webdriver link
+  • type in input "all is done"
+  • clear input
+
+Expected result: Navigation is correct, header and input are displayed

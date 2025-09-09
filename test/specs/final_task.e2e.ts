@@ -1,3 +1,6 @@
+import { expect } from '@wdio/globals'
+
+
 //git hub
 // sign up
 //чекаемо поки з'явиться інпут перевіряемо на відображення текст
