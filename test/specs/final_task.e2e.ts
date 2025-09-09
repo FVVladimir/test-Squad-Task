@@ -38,3 +38,7 @@ import { expect } from '@wdio/globals'
 //scroll to compare all features
 //click
 // compare features is visiblу
+
+describe('sign uo on github and checksearch is work', () => {
+    
+})

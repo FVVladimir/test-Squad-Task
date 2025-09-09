@@ -7,8 +7,8 @@ import { expect } from '@wdio/globals'
 // click по ньому
 // awte until дочекаемось появи заголовку
 
-describe('home wirk 2', () => {
-    it('compare title', async () => {
+describe('home work 2', () => {
+    it('check title', async () => {
         await browser.url('https://webdriver.io/');
           const title  = await browser.getTitle();  
            await expect(browser).toHaveTitle( "WebdriverIO · Next-gen browser and mobile automation test framework for Node.js | WebdriverIO")   
@@ -18,7 +18,7 @@ describe('home wirk 2', () => {
             await APIlink.click();
             await browser.pause(2000) ;      
     });
-    it('scroll into the footer', async () => {        
+    it('scroll to footer', async () => {        
            let window = await $('.pagination-nav__link');
             await window.scrollIntoView();
             await browser.pause(2000) ;      

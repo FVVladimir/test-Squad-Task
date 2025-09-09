@@ -3,7 +3,7 @@ Title: Check whether the scroll is work and window eneble
 
 Preconditon: Go to the page webdriver.io
   • click API
-  • scroll to the footer
+  • scroll to footer
   • check whethr window is enable
   • click the window
   • await till heder is displayed
