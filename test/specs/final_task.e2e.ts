@@ -39,6 +39,29 @@ import { expect } from '@wdio/globals'
 //click
 // compare features is visiblу
 
-describe('sign uo on github and checksearch is work', () => {
+describe('sign up on github and check if search work', () => {
     
+    it('sign up on github', async () => {
+        await browser.url("https://github.com")
+        await $(".HeaderMenu-link--sign-up").click();
+        await $("#signup-form-fields").isDisplayed();
+        let input = $("#email");
+        let password = $("#password");
+        let username = $("#login");
+        let button = $(".country-select-button");
+        // let cuntry = $("#select-panel-5306d3c3-2b9d-4afd-8f4c-8f3481963c84-filter");
+        let cuntry = $(".FormControl-input");
+        await input.setValue("userName@i.ua");
+        await password.setValue("superPasswor23!");
+        await username.setValue("superuser");
+        await button.click();        
+        await browser.pause(3000);
+        await cuntry.setValue("Ukraine");
+        await browser.pause(3000);
+        await input.clearValue();
+        await password.clearValue();
+        await username.clearValue();        
+        await cuntry.clearValue();
+
+    });
 })
