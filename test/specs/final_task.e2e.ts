@@ -64,4 +64,10 @@ describe('sign up on github and check if search work', () => {
         await cuntry.clearValue();
 
     });
-})
+
+    it("check if link is displayed and header is displayed", async () => {
+    let header = $(".Primer_Brand__Heading-module__Heading___IVpmp");
+    await header.isDisplayed();
+    await browser.pause(3000);
+    });
+});
