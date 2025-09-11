@@ -42,7 +42,7 @@ import { expect } from '@wdio/globals'
 describe('sign up on github and check if search work', () => {
     
     it('sign up on github', async () => {
-        await browser.url("https://github.com")
+        await browser.url("https://github.com");
         await $(".HeaderMenu-link--sign-up").click();
         await $("#signup-form-fields").isDisplayed();
         let input = $("#email");
@@ -65,9 +65,22 @@ describe('sign up on github and check if search work', () => {
 
     });
 
-    it("check if link is displayed and header is displayed", async () => {
+    it.only("check if copilot button is displayed and header is displayed", async () => {
+    await browser.url("https://github.com");    
     let header = $(".Primer_Brand__Heading-module__Heading___IVpmp");
+    let secondHeader = $(".text-center");
+    let buttonCopilot = $("//span[contains(text(),'Try GitHub Copilot')]");
+    let buttonTryNow = $("//span[contains(text(), 'Try now')]")
+    await header.scrollIntoView();
     await header.isDisplayed();
     await browser.pause(3000);
+    await buttonCopilot.isDisplayed();
+    await browser.pause(3000);
+    await buttonCopilot.click();
+    await browser.pause(3000);
+    await secondHeader.isDisplayed();
+    await browser.pause(3000);
+    await buttonTryNow.click();
+
     });
 });
