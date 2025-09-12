@@ -103,7 +103,7 @@ describe('sign up on github and check if search work', () => {
         await thanksHeader.isDisplayed();
     });
     
-    it.only("check the search results", async () => {
+    it("check the search results", async () => {
         await browser.url("https://github.com");
         const searchButton = $("//button[@data-action='click:qbsearch-input#handleExpand']");
         const inputField = $("#query-builder-test");
@@ -117,4 +117,8 @@ describe('sign up on github and check if search work', () => {
         await browser.pause(2000);
         await expect(link).toHaveText("nektos/act");
     });
+
+    it("check ability compare all features", async () => {
+        await browser.url("https://github.com");
+    })
 });
