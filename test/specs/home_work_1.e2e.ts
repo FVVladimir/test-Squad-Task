@@ -1,37 +1,44 @@
-import { expect } from '@wdio/globals'
+import { expect } from '@wdio/globals';
 
 // зайти на сторінку
 // перейти на API
 // перевірити url ../api
 // introdaction h1 isdisplayed
 // introduction bred cramps
-// web driver link 
-//search type all is done and delete
+// web driver link перевірити що мае ссилку як висвічуеться
+// search type all is done and delete
 
 describe('home work 1', () => {
-
-    beforeEach(async () => {
-        await browser.url('https://webdriver.io/');
+    
+    it('go to page webdriver.io', async () => {        
+          
+           await browser.url('https://webdriver.io/');
+           await expect(browser).toHaveTitle( "WebdriverIO · Next-gen browser and mobile automation test framework for Node.js | WebdriverIO");  
     });
     
-    it('compare title', async () => {        
-     
-           await expect(browser).toHaveTitle( "WebdriverIO · Next-gen browser and mobile automation test framework for Node.js | WebdriverIO")   
-    });
-    
-    it('tap api link', async () => {
+    it('press api link', async () => {
         
            const APIlink = $('[href="/docs/api"]');
-            
-            await APIlink.click();
-            await browser.pause(2000);      
+              
+              await APIlink.click();
+              await browser.pause(2000);          
         });
     
-    it('h1 header is visible', async () => {
+        it('check current url', async () => {
         
-           const header = $('H1');
+            const currentUrl = await browser.getUrl();            
+               
+               await expect(currentUrl).toContain('webdriver.io/docs/api');
+               await browser.pause(2000);                
+        });
+    
+    it('h1 header is displayed', async () => {
+        
+           const header = $('h1');
             
-            await header.isDisplayed();
+            await header.waitForDisplayed({timeout:3000})
+            await expect(header).toBeDisplayed();
+            await expect(header).toHaveText("Introduction");
             await browser.pause(2000);      
     });
     
@@ -39,20 +46,28 @@ describe('home work 1', () => {
         
            const breadcrumbs = $('.breadcrumbs__link');
            
-            await breadcrumbs.isDisplayed();
+            await expect(breadcrumbs).toBeDisplayed();
             await browser.pause(2000);      
     });
     
     it('webdriver link is displayed', async () => {
         
            const WebDriverlink = $('[href="/docs/api/webdriver"]');
-            
-            await WebDriverlink.isClickable();
-            await WebDriverlink.isDisplayed();
-            await browser.pause(2000);      
+              
+              await expect(WebDriverlink).toBeDisplayed();
+              await browser.pause(2000);               
     });
     
-    it('type in search field', async () => {
+    it('webdriver link is clickable', async () => {
+        
+           const WebDriverlink = $('[href="/docs/api/webdriver"]');
+            
+            const clicable = await WebDriverlink.isClickable();
+            await expect(clicable).toBe(true);
+            await browser.pause(2000);   
+    });
+    
+    it('type in search field and delete text', async () => {
         
            const searchField = $('.DocSearch-Button-Placeholder');
            const searchInput = $('#docsearch-input');
