@@ -3,11 +3,13 @@ import { expect } from '@wdio/globals'
 // зайти на сторінку
 // натиснути на api
 // проскролити до футора
-// перевірити віконце enable
+// перевірити віконце isVisible, isClickible
+// getHTML
 // click по ньому
-// awte until дочекаемось появи заголовку
+// waitUntil дочекаемось появи заголовку webdriver protokol
 
 describe('home work 2', () => {
+       
     it('check title', async () => {
         await browser.url('https://webdriver.io/');
           const title  = await browser.getTitle();  
