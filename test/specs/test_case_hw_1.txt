@@ -1,7 +1,7 @@
 Title: Check whether the link is being followed correctly
        and whether the input and heading are displayed;
 
-Preconditon: Go to the page webdriver.io
+💎Preconditon: Go to the page webdriver.io
   
   • click API
   • check url is contains ../api

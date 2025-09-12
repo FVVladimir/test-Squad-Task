@@ -1,11 +1,13 @@
-Title: Check whether the scroll is work and window eneble
-       and header displayed;
+Title: Check whether the scroll is work and window visible
+       clicable and header displayed after pass to the next page;
 
-Preconditon: Go to the page webdriver.io
+💎Preconditon: Go to the page webdriver.io
+  
   • click API
   • scroll to footer
-  • check whethr window is enable
-  • click the window
+  • check whethr button is visible
+  • check whethr button is clickable
+  • click the button
   • await till heder is displayed
 
-Expected result: Scroll work correct, header is displayed;
+Expected result: Scroll work correct, header is displayed navigation work correctly;
