@@ -65,24 +65,24 @@ describe('sign up on github and check if search work', () => {
     });
 
     it("check if copilot button is displayed and header is displayed", async () => {
-    await browser.url("https://github.com");    
-    const header = $(".Primer_Brand__Heading-module__Heading___IVpmp");
-    const secondHeader = $(".text-center");
-    const buttonCopilot = $("//span[contains(text(),'Try GitHub Copilot')]");
-    const buttonTryNow = $("//span[contains(text(), 'Try now')]")
-    await header.scrollIntoView();
-    await header.isDisplayed();
-    await browser.pause(3000);
-    await buttonCopilot.isDisplayed();
-    await browser.pause(3000);
-    await buttonCopilot.click();
-    await browser.pause(3000);
-    await secondHeader.isDisplayed();
-    await browser.pause(3000);
-    await buttonTryNow.click();
+        await browser.url("https://github.com");    
+        const header = $(".Primer_Brand__Heading-module__Heading___IVpmp");
+        const secondHeader = $(".text-center");
+        const buttonCopilot = $("//span[contains(text(),'Try GitHub Copilot')]");
+        const buttonTryNow = $("//span[contains(text(), 'Try now')]")
+        await header.scrollIntoView();
+        await header.isDisplayed();
+        await browser.pause(3000);
+        await buttonCopilot.isDisplayed();
+        await browser.pause(3000);
+        await buttonCopilot.click();
+        await browser.pause(3000);
+        await secondHeader.isDisplayed();
+        await browser.pause(3000);
+        await buttonTryNow.click();
     });
 
-    it.only("check button subscribe and form work", async () => {
+    it("check button subscribe and form work", async () => {
         await browser.url("https://github.com");
         const linkSubscribe = $("//a[@class='btn-mktg mb-4 btn-muted-mktg']");
         const headerSubscribe = $("#hero-section-brand-heading");
@@ -101,5 +101,20 @@ describe('sign up on github and check if search work', () => {
         await subscribeButton.click();
         await browser.pause(2000);
         await thanksHeader.isDisplayed();
+    });
+    
+    it.only("check the search results", async () => {
+        await browser.url("https://github.com");
+        const searchButton = $("//button[@data-action='click:qbsearch-input#handleExpand']");
+        const inputField = $("#query-builder-test");
+        const searshAllButton = $("//span[contains(text(), 'Search all of GitHub')]");
+        const link = $("//a[@href='/nektos/act']");
+        await searchButton.click();
+        await browser.pause(2000);
+        await inputField.setValue("act");
+        await browser.pause(2000);
+        await searshAllButton.click();
+        await browser.pause(2000);
+        await expect(link).toHaveText("nektos/act");
     });
 });
