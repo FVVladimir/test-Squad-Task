@@ -15,39 +15,43 @@ describe('home work 1', () => {
           const title  = await browser.getTitle();  
            await expect(browser).toHaveTitle( "WebdriverIO · Next-gen browser and mobile automation test framework for Node.js | WebdriverIO")   
     });
+    
     it('tap api link', async () => {
         await browser.url('https://webdriver.io/');
-           let APIlink = await $('[href="/docs/api"]');
+           const APIlink = $('[href="/docs/api"]');
             await APIlink.click();
-            await browser.pause(2000) ;      
+            await browser.pause(2000);      
     });
+    
     it('h1 header is visible', async () => {
         await browser.url('https://webdriver.io/');
-           let header = await $('H1');
+           const header = $('H1');
             await header.isDisplayed();
-            await browser.pause(2000) ;      
+            await browser.pause(2000);      
     });
+    
     it('h1 breadcrumbs is displayed', async () => {
         await browser.url('https://webdriver.io/');
-           let breadcrumbs = await $('.breadcrumbs__link');
+           const breadcrumbs = $('.breadcrumbs__link');
             await breadcrumbs.isDisplayed();
-            await browser.pause(2000) ;      
+            await browser.pause(2000);      
     });
+    
     it('webdriver link is displayed', async () => {
         await browser.url('https://webdriver.io/');
-           let WebDriverlink = await $('[href="/docs/api/webdriver"]');
+           const WebDriverlink = $('[href="/docs/api/webdriver"]');
             await WebDriverlink.isClickable();
             await WebDriverlink.isDisplayed();
-            await browser.pause(2000) ;      
+            await browser.pause(2000);      
     });
+    
     it('type in search field', async () => {
         await browser.url('https://webdriver.io/');
-           let searchField = await $('.DocSearch-Button-Placeholder');
+           const searchField = $('.DocSearch-Button-Placeholder');
+           const searchInput = $('#docsearch-input');
            await searchField.click();            
            await browser.pause(2000) ;      
-           let searchInput = await $('#docsearch-input');
            await searchInput.addValue('all is done');
            await $('.DocSearch-Reset').click();
     });
 });
-

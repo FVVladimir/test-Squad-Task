@@ -14,12 +14,12 @@ describe('home work 2', () => {
            await expect(browser).toHaveTitle( "WebdriverIO · Next-gen browser and mobile automation test framework for Node.js | WebdriverIO")   
     });
     it('tap api link', async () => {        
-           let APIlink = $('[href="/docs/api"]');
+           const APIlink = $('[href="/docs/api"]');
             await APIlink.click();
             await browser.pause(2000) ;      
     });
     it('scroll to footer', async () => {        
-           let window = $('.pagination-nav__link');
+           const window = $('.pagination-nav__link');
             await window.scrollIntoView();
             await browser.pause(2000) ;      
             await window.isDisplayed();
@@ -27,10 +27,9 @@ describe('home work 2', () => {
             await window.click();
     });
     it('check if h1 displayed', async () => {        
-           let window = $('.pagination-nav__link');           
+           const window = $('.pagination-nav__link');           
            await window.click();
-           let title = $('H1');
+           const title = $('H1');
            await title.isDisplayed();
-    });
-    
-})
+    });    
+});

@@ -43,34 +43,33 @@ describe('sign up on github and check if search work', () => {
     
     it('sign up on github', async () => {
         await browser.url("https://github.com");
+        const emailField = $("#email");
+        const passwordField = $("#password");
+        const username = $("#login");
+        const button = $(".country-select-button");       
+        const cuntry = $(".FormControl-input");
         await $(".HeaderMenu-link--sign-up").click();
         await $("#signup-form-fields").isDisplayed();
-        let input = $("#email");
-        let password = $("#password");
-        let username = $("#login");
-        let button = $(".country-select-button");
-        // let cuntry = $("#select-panel-5306d3c3-2b9d-4afd-8f4c-8f3481963c84-filter");
-        let cuntry = $(".FormControl-input");
-        await input.setValue("userName@i.ua");
-        await password.setValue("superPasswor23!");
+        await emailField.setValue("userName@i.ua");
+        await passwordField.setValue("superPasswor23!");
         await username.setValue("superuser");
         await button.click();        
         await browser.pause(3000);
         await cuntry.setValue("Ukraine");
         await browser.pause(3000);
-        await input.clearValue();
-        await password.clearValue();
+        await emailField.clearValue();
+        await passwordField.clearValue();
         await username.clearValue();        
         await cuntry.clearValue();
 
     });
 
-    it.only("check if copilot button is displayed and header is displayed", async () => {
+    it("check if copilot button is displayed and header is displayed", async () => {
     await browser.url("https://github.com");    
-    let header = $(".Primer_Brand__Heading-module__Heading___IVpmp");
-    let secondHeader = $(".text-center");
-    let buttonCopilot = $("//span[contains(text(),'Try GitHub Copilot')]");
-    let buttonTryNow = $("//span[contains(text(), 'Try now')]")
+    const header = $(".Primer_Brand__Heading-module__Heading___IVpmp");
+    const secondHeader = $(".text-center");
+    const buttonCopilot = $("//span[contains(text(),'Try GitHub Copilot')]");
+    const buttonTryNow = $("//span[contains(text(), 'Try now')]")
     await header.scrollIntoView();
     await header.isDisplayed();
     await browser.pause(3000);
@@ -81,6 +80,26 @@ describe('sign up on github and check if search work', () => {
     await secondHeader.isDisplayed();
     await browser.pause(3000);
     await buttonTryNow.click();
+    });
 
+    it.only("check button subscribe and form work", async () => {
+        await browser.url("https://github.com");
+        const linkSubscribe = $("//a[@class='btn-mktg mb-4 btn-muted-mktg']");
+        const headerSubscribe = $("#hero-section-brand-heading");
+        const inputEmail = $("#\\:R11h76\\:");
+        const checkBox = $("#gated-agree-marketingEmailOptin1");
+        const selectCuntry = $("#country");
+        const subscribeButton = $("//button[@class='Primer_Brand__Button-module__Button___lDruK Primer_Brand__Button-module__Button--primary___xIC7G Primer_Brand__Button-module__Button--size-medium___EyCyw mt-4']");
+        const thanksHeader = $("#hero-section-brand-heading");
+        await linkSubscribe.scrollIntoView();
+        await linkSubscribe.isDisplayed();
+        await linkSubscribe.click();
+        await headerSubscribe.isDisplayed();
+        await inputEmail.setValue("emir@ua.fm");
+        await selectCuntry.selectByAttribute("value", "UA");
+        await checkBox.click();
+        await subscribeButton.click();
+        await browser.pause(2000);
+        await thanksHeader.isDisplayed();
     });
 });
