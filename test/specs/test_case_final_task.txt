@@ -2,10 +2,42 @@ Title: Verification of GitHub functionality ;
 
 💎Preconditon: Go to the github main page;
   
-  • 
-  • 
-  • 
-  • 
-  • 
+  • tap button gign in;
+  • check if gign in header is displayed; 
+  • enter email;
+  • enter password;
+  • enter username;
+  • tap select coutry button;
+  • type Ukraine;
+  • clear all fields;
+  
+  • scroll to copilot link;
+  • check it visible; 
+  • tap;
+  • check button try it now;
+  • tap it;
+  
+  • scroll to the footer;
+  • check if button subscribe is displayed;
+  • check if button subscribe is clickable;
+  • check url;
+  • check header is displayed
+  • entrt email;
+  • chois country;
+  • click checkbox;
+  • click to subscribe link;
+  • check if header displayed; 
+ 
+  • tap to input search;
+  • text act;
+  • prass line below;
+  • check if the act is in elements in searc;
+  
+  • click link pricing;
+  • chech if header is displayed;
+  • scroll to the link;
+  • check if the linl displayed;
+  • click to link;  
+  • check if header displayed;  
 
 Expected result: ;
