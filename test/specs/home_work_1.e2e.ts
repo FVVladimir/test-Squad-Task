@@ -36,7 +36,7 @@ describe('home work 1', () => {
         
            const header = $('h1');
             
-            await header.waitForDisplayed({timeout:3000})
+            await header.waitForDisplayed({timeout:3000});
             await expect(header).toBeDisplayed();
             await expect(header).toHaveText("Introduction");
             await browser.pause(2000);      
