@@ -1,13 +1,5 @@
 import { expect } from '@wdio/globals';
 
-// зайти на сторінку
-// перейти на API
-// перевірити url ../api
-// introdaction h1 isdisplayed
-// introduction bred cramps
-// web driver link перевірити що мае ссилку як висвічуеться
-// search type all is done and delete
-
 describe('home work 1', () => {
     
     it('go to page webdriver.io', async () => {        

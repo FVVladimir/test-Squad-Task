@@ -1,13 +1,5 @@
 import { expect } from '@wdio/globals';
 
-// зайти на сторінку
-// натиснути на api
-// проскролити до футора
-// перевірити віконце isVisible
-// перевірити віконце isClickible
-// click по ньому
-// waitUntil дочекаемось появи заголовку webdriver protokol
-
 describe('home work 2', () => {
        
     it('go to the page webdriver.io', async () => {

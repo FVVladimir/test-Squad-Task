@@ -1,0 +1,11 @@
+Title: Verification of GitHub functionality ;
+
+💎Preconditon: Go to the github main page;
+  
+  • 
+  • 
+  • 
+  • 
+  • 
+
+Expected result: ;
